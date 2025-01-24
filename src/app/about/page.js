@@ -44,7 +44,7 @@ const AboutPage = () => {
           <ul>
             <li className="py-2">1. Empower your team with the ability to make data-driven decisions.</li>
             <li className="py-2">2. Stay ahead of the competition by leveraging advanced data science techniques and tools to gain deeper insights into market trends and customer behavior.</li>
-            <li className="py-2">3. Invest in your employees' professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
+            <li className="py-2">3. Invest in your employees professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
           </ul>
         </motion.div>
 
@@ -74,7 +74,7 @@ const AboutPage = () => {
           className="text-left flex flex-col h-full"
         >
           <h2 className="text-4xl font-bold text-white mb-4">Our Vision</h2>
-          <p>To become Africa's market leader and most trusted center of excellence for training in data science, machine learning, artificial intelligence and software engineering. Creating a future where data science and AI professionals take their rightful place in developing innovative solutions to complex problems, drive innovation and improving the quality of life.</p>
+          <p>To become Africa&apos;s market leader and most trusted center of excellence for training in data science, machine learning, artificial intelligence and software engineering. Creating a future where data science and AI professionals take their rightful place in developing innovative solutions to complex problems, drive innovation and improving the quality of life.</p>
         </motion.div>
 
         <motion.div

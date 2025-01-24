@@ -15,7 +15,7 @@ const TAB_DATA = [
     title: "Vision",
     id: "vision",
     content: (
-      <p>To become Africa's market leader and trusted center of excellence for training in data science, machine learning, artificial intelligence and software engineering.
+      <p>To become Africa&apos;s market leader and trusted center of excellence for training in data science, machine learning, artificial intelligence and software engineering.
 
       Creating a future where data science and AI professionals take their place in developing innovative solutions to complex problems, drive innovation and improve quality of life.</p>
     ),

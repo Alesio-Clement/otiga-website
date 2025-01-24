@@ -24,7 +24,7 @@ const IndustryPage = () => {
             animate={{ opacity: 1 }} 
             transition={{ duration: 1, delay: 0.2 }}
           >
-            In today's data-centric world, industries are increasingly recognizing the importance of harnessing data to drive informed decision-making, enhance operational efficiency, and gain a competitive advantage. At ORTH, we offer specialized training programs designed to help industries unlock the full potential of their data and equip their employees with the latest data science tools and techniques.
+            In today&apos;s data-centric world, industries are increasingly recognizing the importance of harnessing data to drive informed decision-making, enhance operational efficiency, and gain a competitive advantage. At ORTH, we offer specialized training programs designed to help industries unlock the full potential of their data and equip their employees with the latest data science tools and techniques.
           </motion.p>
 
           {/* Why Partner With Us */}
