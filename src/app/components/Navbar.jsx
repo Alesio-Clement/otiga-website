@@ -2,9 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "./MenuOverlay";
 
 const navLinks = [
   {
@@ -17,7 +15,7 @@ const navLinks = [
   },
   {
     title: "OUR SERVICES",
-    path: "/services",
+    path: "/",
     dropdown: [
       { title: "Bootstraps", path: "/services/bootstraps" },
       { title: "Industry", path: "/services/industry" },
@@ -30,7 +28,7 @@ const navLinks = [
     path: "#news",
   },
   {
-    title: "CARRERS",
+    title: "CAREERS",
     path: "/careers",
   },
   {
@@ -45,7 +43,7 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("/"); // Track active link
 
   const handleDropdown = (index) => {
-    setDropdownOpen(dropdownOpen === index ? null : index); // Toggle the dropdown open/close
+    setDropdownOpen(dropdownOpen === index ? null : index); // Toggle dropdown open/close
   };
 
   return (
@@ -55,8 +53,15 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"
         >
-          <Image className="rounded" src="/images/logo.jpg" alt="hero image" width={200} height={300} />
+          <Image
+            className="rounded"
+            src="/images/logo.jpg"
+            alt="hero image"
+            width={200}
+            height={300}
+          />
         </Link>
+        {/* Mobile Menu Button */}
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -74,6 +79,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
+        {/* Desktop Menu */}
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
@@ -85,8 +91,10 @@ const Navbar = () => {
                     className="cursor-pointer"
                   >
                     <span
-                      className={`block pl-3 pr-4 text-[#ffffff] rounded md:p-0 hover:text-white ${activeLink === link.path ? 'underline' : ''}`}
-                      onClick={() => setActiveLink(link.path)} // Update active link on click
+                      className={`block pl-3 pr-4 text-[#ffffff] rounded md:p-0 hover:text-white ${
+                        activeLink === link.path ? "underline" : ""
+                      }`}
+                      onClick={() => setActiveLink(link.path)}
                     >
                       {link.title}
                     </span>
@@ -97,8 +105,12 @@ const Navbar = () => {
                             <li key={idx}>
                               <Link
                                 href={dropdownItem.path}
-                                className={`block px-4 py-2 text-[#ADB7BE] hover:text-white ${activeLink === dropdownItem.path ? 'underline' : ''}`}
-                                onClick={() => setActiveLink(dropdownItem.path)} // Set active link when clicking dropdown item
+                                className={`block px-4 py-2 text-[#ADB7BE] hover:text-white ${
+                                  activeLink === dropdownItem.path
+                                    ? "underline"
+                                    : ""
+                                }`}
+                                onClick={() => setActiveLink(dropdownItem.path)}
                               >
                                 {dropdownItem.title}
                               </Link>
@@ -109,19 +121,78 @@ const Navbar = () => {
                     )}
                   </div>
                 ) : (
-                  <NavLink
+                  <Link
                     href={link.path}
-                    title={link.title}
-                    className={activeLink === link.path ? 'underline' : ''}
-                    onClick={() => setActiveLink(link.path)} // Set active link on click
-                  />
+                    className={`block text-white ${
+                      activeLink === link.path ? "underline" : ""
+                    }`}
+                    onClick={() => setActiveLink(link.path)}
+                  >
+                    {link.title}
+                  </Link>
                 )}
               </li>
             ))}
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+      {/* Mobile Menu Dropdown */}
+      {navbarOpen && (
+        <div className="mobile-menu block md:hidden">
+          <ul className="flex flex-col p-4 space-y-4">
+            {navLinks.map((link, index) => (
+              <li key={index} className="relative">
+                {link.dropdown ? (
+                  <div>
+                    <div
+                      onClick={() => handleDropdown(index)} // Toggle dropdown
+                      className="cursor-pointer flex justify-between items-center text-white"
+                    >
+                      <span>{link.title}</span>
+                      <Bars3Icon
+                        className={`h-5 w-5 transform ${
+                          dropdownOpen === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                    {dropdownOpen === index && (
+                      <div className="pl-4 bg-[#121212] border border-gray-700 rounded-md shadow-lg">
+                        <ul className="py-2">
+                          {link.dropdown.map((dropdownItem, idx) => (
+                            <li key={idx}>
+                              <Link
+                                href={dropdownItem.path}
+                                className={`block px-4 py-2 text-[#ADB7BE] hover:text-white ${
+                                  activeLink === dropdownItem.path
+                                    ? "underline"
+                                    : ""
+                                }`}
+                                onClick={() => setActiveLink(dropdownItem.path)}
+                              >
+                                {dropdownItem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={link.path}
+                    className={`block text-white ${
+                      activeLink === link.path ? "underline" : ""
+                    }`}
+                    onClick={() => setActiveLink(link.path)}
+                  >
+                    {link.title}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

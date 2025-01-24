@@ -64,28 +64,34 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 mt-20 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        {/* { <Image src="/images/about-image.png" width={500} height={500} />} */}
-        <h2 className="text-4xl font-bold text-white ">Why Us</h2>
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          
-          <h4 className="text-1xl font-bold text-white mb-4">For the industry</h4>
-          <ul>
-            <li className="py-2">1. Empower your team with the ability to make data-driven decisions.</li>
-            <li className="py-2">2. Stay ahead of the competition by leveraging advanced data science techniques and tools to gain deeper insights into market trends and customer behavior.</li>
-            <li className="py-2">3. Invest in your employees professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
-          </ul>
-        </div>
+      <div className="md:grid md:grid-cols-2 gap-8 items-start py-8 mt-20 px-4 xl:gap-16 sm:py-16">
+  {/* Title Section */}
+  <h2 className="text-4xl font-bold text-white md:justify-self-start">Why Choose ORTH</h2>
+
+  {/* Content Section */}
+  <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+    {/* For the Industry */}
+    <h4 className="text-xl font-bold text-white mb-4">For the industry</h4>
+    <ul>
+      <li className="py-2">1. Empower your team with the ability to make data-driven decisions.</li>
+      <li className="py-2">2. Stay ahead of the competition by leveraging advanced data science techniques and tools to gain deeper insights into market trends and customer behavior.</li>
+      <li className="py-2">3. Invest in your employees' professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
+    </ul>
+
+    {/* For Individuals */}
+    <h4 className="text-xl font-bold text-white mb-4 mt-8">For individuals</h4>
+    <ol>
+      <li className="py-2">1. Through our training programs, facilitate the connections between the trainees and industry experts.</li>
+      <li className="py-2">2. Equip you with the skills in high demand by employers.</li>
+      <li className="py-2">3. Engage in hands-on projects and real-world case studies.</li>
+      <li className="py-2">4. Network with industry experts and peers, gaining insights and connections that can help propel your career forward.</li>
+    </ol>
+  </div>
+</div>
+
+
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
 
-          <h4 className="text-1xl font-bold text-white mb-4">For individuals</h4>
-          <ol>
-          <li className="py-2">1. Through our training programs, facilitate the connections between the trainees and industry experts.</li>
-          <li className="py-2">2. Equip you with the skills in high demand by employers</li>
-          <li className="py-2">3. Engage in hands-on projects and real-world case studies.</li>
-          <li className="py-2">4. Network with industry experts and peers, gaining insights and connections that can help propel your career forward</li>
-          </ol>
-        </div>
       </div>
     </section>
   );
