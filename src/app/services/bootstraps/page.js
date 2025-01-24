@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";  // Import motion from Framer Motion
+import { motion } from "framer-motion";  
 
 const BootstrapPage = () => {
   return (
