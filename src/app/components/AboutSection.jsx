@@ -75,7 +75,7 @@ const AboutSection = () => {
     <ul>
       <li className="py-2">1. Empower your team with the ability to make data-driven decisions.</li>
       <li className="py-2">2. Stay ahead of the competition by leveraging advanced data science techniques and tools to gain deeper insights into market trends and customer behavior.</li>
-      <li className="py-2">3. Invest in your employees' professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
+      <li className="py-2">3. Invest in your employees professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
     </ul>
 
     {/* For Individuals */}
