@@ -24,7 +24,7 @@ const IndustryPage = () => {
             animate={{ opacity: 1 }} 
             transition={{ duration: 1, delay: 0.2 }}
           >
-            In today's data-centric world, industries are increasingly recognizing the importance of harnessing data to drive informed decision-making, enhance operational efficiency, and gain a competitive advantage. At ORTH, we offer specialized training programs designed to help industries unlock the full potential of their data and equip their employees with the latest data science tools and techniques.
+            In today data-centric world, industries are increasingly recognizing the importance of harnessing data to drive informed decision-making enhance operational efficiency and gain a competitive advantage. At ORTH we offer specialized training programs designed to help industries unlock the full potential of their data and equip their employees with the latest data science tools and techniques.
           </motion.p>
 
           {/* Why Partner With Us */}
@@ -41,7 +41,7 @@ const IndustryPage = () => {
             animate={{ opacity: 1 }} 
             transition={{ duration: 1, delay: 0.6 }}
           >
-            At Otigo Research & Technology Hub, we are committed to helping industries harness the power of data science. Partner with us to transform your data into actionable insights, upskill your workforce, and achieve your organizational objectives. Let us be your trusted tech training partner on the journey to data-driven excellence.
+            At Otigo Research & Technology Hub we are committed to helping industries harness the power of data science. Partner with us to transform your data into actionable insights, upskill your workforce, and achieve your organizational objectives. Let us be your trusted tech training partner on the journey to data-driven excellence.
           </motion.p>
 
           {/* List of Benefits */}

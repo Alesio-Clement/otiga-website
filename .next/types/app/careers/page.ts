@@ -1,4 +1,4 @@
-// File: C:\Users\convenience\Desktop\nextjs-portfolio-main\src\app\careers\page.js
+// File: D:\xampp\htdocs\otiga-website\src\app\careers\page.js
 import * as entry from '../../../../src/app/careers/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
