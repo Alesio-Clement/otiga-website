@@ -65,20 +65,29 @@ const AboutSection = () => {
         </div>
       </div>
       <div className="md:grid md:grid-cols-2 gap-8 items-start py-8 mt-20 px-4 xl:gap-16 sm:py-16">
-  {/* Title Section */}
-  <h2 className="text-4xl font-bold text-white md:justify-self-start">Why Choose ORTH</h2>
 
-  {/* Content Section */}
+  <div className="flex flex-col items-start">
+ 
+    <h2 className="text-4xl font-bold text-white mb-6">Why Choose ORTH</h2>
+    
+    <img 
+      src="/images/boardroom.webp" 
+      alt="Why Choose ORTH" 
+      className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
+    />
+  </div>
+
+
   <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-    {/* For the Industry */}
+
     <h4 className="text-xl font-bold text-white mb-4">For the industry</h4>
     <ul>
       <li className="py-2">1. Empower your team with the ability to make data-driven decisions.</li>
       <li className="py-2">2. Stay ahead of the competition by leveraging advanced data science techniques and tools to gain deeper insights into market trends and customer behavior.</li>
-      <li className="py-2">3. Invest in your employees professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
+      <li className="py-2">3. Invest in your employees' professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
     </ul>
 
-    {/* For Individuals */}
+
     <h4 className="text-xl font-bold text-white mb-4 mt-8">For individuals</h4>
     <ol>
       <li className="py-2">1. Through our training programs, facilitate the connections between the trainees and industry experts.</li>
@@ -88,6 +97,8 @@ const AboutSection = () => {
     </ol>
   </div>
 </div>
+
+
 
 
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">

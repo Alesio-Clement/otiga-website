@@ -40,19 +40,16 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
-  const [activeLink, setActiveLink] = useState("/"); // Track active link
+  const [activeLink, setActiveLink] = useState("/");
 
   const handleDropdown = (index) => {
-    setDropdownOpen(dropdownOpen === index ? null : index); // Toggle dropdown open/close
+    setDropdownOpen(dropdownOpen === index ? null : index);
   };
 
   return (
     <nav className="relative mx-auto top-0 left-0 right-0 z-10 bg-[#000000] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-5 py-2">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
+        <Link href="/" className="text-2xl md:text-5xl text-white font-semibold">
           <Image
             className="rounded"
             src="/images/logo.jpg"
@@ -61,7 +58,7 @@ const Navbar = () => {
             height={300}
           />
         </Link>
-        {/* Mobile Menu Button */}
+
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -79,7 +76,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        {/* Desktop Menu */}
+
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
@@ -126,7 +123,11 @@ const Navbar = () => {
                     className={`block text-white ${
                       activeLink === link.path ? "underline" : ""
                     }`}
-                    onClick={() => setActiveLink(link.path)}
+                    onClick={() => {
+                      setActiveLink(link.path);
+                      setNavbarOpen(false);
+                      setDropdownOpen(null);
+                    }}
                   >
                     {link.title}
                   </Link>
@@ -136,7 +137,6 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {/* Mobile Menu Dropdown */}
       {navbarOpen && (
         <div className="mobile-menu block md:hidden">
           <ul className="flex flex-col p-4 space-y-4">
@@ -145,7 +145,7 @@ const Navbar = () => {
                 {link.dropdown ? (
                   <div>
                     <div
-                      onClick={() => handleDropdown(index)} // Toggle dropdown
+                      onClick={() => handleDropdown(index)}
                       className="cursor-pointer flex justify-between items-center text-white"
                     >
                       <span>{link.title}</span>
@@ -183,7 +183,11 @@ const Navbar = () => {
                     className={`block text-white ${
                       activeLink === link.path ? "underline" : ""
                     }`}
-                    onClick={() => setActiveLink(link.path)}
+                    onClick={() => {
+                      setActiveLink(link.path);
+                      setNavbarOpen(false);
+                      setDropdownOpen(null);
+                    }}
                   >
                     {link.title}
                   </Link>
