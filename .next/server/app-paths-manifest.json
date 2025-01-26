@@ -1,7 +1,13 @@
 {
-  "/page": "app/page.js",
+  "/_not-found": "app/_not-found.js",
   "/about/page": "app/about/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/careers/page": "app/careers/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/services/bootstraps/page": "app/services/bootstraps/page.js",
+  "/services/consultancy/page": "app/services/consultancy/page.js",
+  "/services/individual-upskills/page": "app/services/individual-upskills/page.js",
+  "/services/industry/page": "app/services/industry/page.js",
+  "/services/page": "app/services/page.js"
 }

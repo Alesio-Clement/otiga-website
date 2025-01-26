@@ -15,9 +15,9 @@ const TAB_DATA = [
     title: "Vision",
     id: "vision",
     content: (
-      <p>To become Africa&apos;s market leader and trusted center of excellence for training in data science, machine learning, artificial intelligence and software engineering.
+      <p>To become Africas market leader and trusted center of excellence for training in data science machine learning artificial intelligence and software engineering.
 
-      Creating a future where data science and AI professionals take their place in developing innovative solutions to complex problems, drive innovation and improve quality of life.</p>
+      Creating a future where data science and AI professionals take their place in developing innovative solutions to complex problems drive innovation and improve quality of life.</p>
     ),
   },
   
@@ -84,7 +84,7 @@ const AboutSection = () => {
     <ul>
       <li className="py-2">1. Empower your team with the ability to make data-driven decisions.</li>
       <li className="py-2">2. Stay ahead of the competition by leveraging advanced data science techniques and tools to gain deeper insights into market trends and customer behavior.</li>
-      <li className="py-2">3. Invest in your employees' professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
+      <li className="py-2">3. Invest in your employees professional growth by providing them with the skills and knowledge needed to thrive in a data-driven industry.</li>
     </ul>
 
 
@@ -93,7 +93,7 @@ const AboutSection = () => {
       <li className="py-2">1. Through our training programs, facilitate the connections between the trainees and industry experts.</li>
       <li className="py-2">2. Equip you with the skills in high demand by employers.</li>
       <li className="py-2">3. Engage in hands-on projects and real-world case studies.</li>
-      <li className="py-2">4. Network with industry experts and peers, gaining insights and connections that can help propel your career forward.</li>
+      <li className="py-2">4. Network with industry experts and peers gaining insights and connections that can help propel your career forward.</li>
     </ol>
   </div>
 </div>
