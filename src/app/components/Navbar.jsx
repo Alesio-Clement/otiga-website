@@ -8,6 +8,9 @@ const navLinks = [
   {
     title: "HOME",
     path: "/",
+    dropdown:[{ title: "Home 2", path: "/home2/" },
+
+    ]
   },
   {
     title: "ABOUT US",
@@ -21,6 +24,7 @@ const navLinks = [
       { title: "Industry", path: "/services/industry" },
       { title: "Individual Upskills", path: "/services/individual-upskills" },
       { title: "Consultancy", path: "/services/consultancy" },
+      
     ],
   },
   {
