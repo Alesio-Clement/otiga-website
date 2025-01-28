@@ -2,17 +2,16 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const navLinks = [
   {
     title: "HOME",
     path: "/",
-    dropdown:[
+    dropdown: [
       { title: "Home 1", path: "/" },
       { title: "Home 2", path: "/home2/" },
-
-    ]
+    ],
   },
   {
     title: "ABOUT US",
@@ -20,13 +19,12 @@ const navLinks = [
   },
   {
     title: "OUR SERVICES",
-    path: "/",
+    path: "/services",
     dropdown: [
       { title: "Bootstraps", path: "/services/bootstraps" },
       { title: "Industry", path: "/services/industry" },
       { title: "Individual Upskills", path: "/services/individual-upskills" },
       { title: "Consultancy", path: "/services/consultancy" },
-      
     ],
   },
   {
@@ -48,8 +46,12 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [activeLink, setActiveLink] = useState("/");
 
-  const handleDropdown = (index) => {
-    setDropdownOpen(dropdownOpen === index ? null : index);
+  const handleDropdownEnter = (index) => {
+    setDropdownOpen(index); // Open the dropdown
+  };
+
+  const handleDropdownLeave = () => {
+    setTimeout(() => setDropdownOpen(null), 200); // Add a slight delay before hiding
   };
 
   return (
@@ -65,6 +67,7 @@ const Navbar = () => {
           />
         </Link>
 
+        {/* Mobile menu toggle */}
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -83,36 +86,41 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Desktop menu */}
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
-              <li key={index} className="relative">
+              <li
+                key={index}
+                className="relative group"
+                onMouseEnter={() => handleDropdownEnter(index)}
+                onMouseLeave={handleDropdownLeave}
+              >
                 {link.dropdown ? (
-                  <div
-                    onMouseEnter={() => handleDropdown(index)}
-                    onMouseLeave={() => handleDropdown(null)}
-                    className="cursor-pointer"
-                  >
-                    <span
-                      className={`block pl-3 pr-4 text-[#ffffff] rounded md:p-0 hover:text-white ${
-                        activeLink === link.path ? "underline" : ""
-                      }`}
-                      onClick={() => setActiveLink(link.path)}
-                    >
-                      {link.title}
-                    </span>
+                  <>
+                    <div className="cursor-pointer flex items-center space-x-1">
+                      <span
+                        className={`block pl-3 pr-4 text-[#ffffff] rounded md:p-0 hover:text-white ${
+                          activeLink === link.path ? "underline" : ""
+                        }`}
+                        onClick={() => setActiveLink(link.path)}
+                      >
+                        {link.title}
+                      </span>
+                      <ChevronDownIcon className="w-4 h-4 text-white" />
+                    </div>
                     {dropdownOpen === index && (
-                      <div className="absolute left-0 bg-[#121212] border border-gray-700 rounded-md shadow-lg w-48">
+                      <div
+                        className="absolute left-0 bg-[#121212] border border-gray-700 rounded-md shadow-lg w-48 mt-1"
+                        onMouseEnter={() => handleDropdownEnter(index)}
+                        onMouseLeave={handleDropdownLeave}
+                      >
                         <ul className="py-2">
                           {link.dropdown.map((dropdownItem, idx) => (
                             <li key={idx}>
                               <Link
                                 href={dropdownItem.path}
-                                className={`block px-4 py-2 text-[#ADB7BE] hover:text-white ${
-                                  activeLink === dropdownItem.path
-                                    ? "underline"
-                                    : ""
-                                }`}
+                                className="block px-4 py-2 text-[#ADB7BE] hover:text-white"
                                 onClick={() => setActiveLink(dropdownItem.path)}
                               >
                                 {dropdownItem.title}
@@ -122,18 +130,14 @@ const Navbar = () => {
                         </ul>
                       </div>
                     )}
-                  </div>
+                  </>
                 ) : (
                   <Link
                     href={link.path}
                     className={`block text-white ${
                       activeLink === link.path ? "underline" : ""
                     }`}
-                    onClick={() => {
-                      setActiveLink(link.path);
-                      setNavbarOpen(false);
-                      setDropdownOpen(null);
-                    }}
+                    onClick={() => setActiveLink(link.path)}
                   >
                     {link.title}
                   </Link>
@@ -143,19 +147,21 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+
+      {/* Mobile menu dropdown */}
       {navbarOpen && (
         <div className="mobile-menu block md:hidden">
           <ul className="flex flex-col p-4 space-y-4">
             {navLinks.map((link, index) => (
               <li key={index} className="relative">
                 {link.dropdown ? (
-                  <div>
+                  <>
                     <div
-                      onClick={() => handleDropdown(index)}
+                      onClick={() => handleDropdownEnter(index)}
                       className="cursor-pointer flex justify-between items-center text-white"
                     >
                       <span>{link.title}</span>
-                      <Bars3Icon
+                      <ChevronDownIcon
                         className={`h-5 w-5 transform ${
                           dropdownOpen === index ? "rotate-180" : ""
                         }`}
@@ -168,12 +174,7 @@ const Navbar = () => {
                             <li key={idx}>
                               <Link
                                 href={dropdownItem.path}
-                                className={`block px-4 py-2 text-[#ADB7BE] hover:text-white ${
-                                  activeLink === dropdownItem.path
-                                    ? "underline"
-                                    : ""
-                                }`}
-                                onClick={() => setActiveLink(dropdownItem.path)}
+                                className="block px-4 py-2 text-[#ADB7BE] hover:text-white"
                               >
                                 {dropdownItem.title}
                               </Link>
@@ -182,18 +183,14 @@ const Navbar = () => {
                         </ul>
                       </div>
                     )}
-                  </div>
+                  </>
                 ) : (
                   <Link
                     href={link.path}
                     className={`block text-white ${
                       activeLink === link.path ? "underline" : ""
                     }`}
-                    onClick={() => {
-                      setActiveLink(link.path);
-                      setNavbarOpen(false);
-                      setDropdownOpen(null);
-                    }}
+                    onClick={() => setActiveLink(link.path)}
                   >
                     {link.title}
                   </Link>
@@ -208,3 +205,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
