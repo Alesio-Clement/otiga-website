@@ -26,7 +26,7 @@ const Home2 = () => {
     <div className="relative min-h-screen bg-gray-900">
      
   
-      <section className="relative py-32 px-32">
+      <section className="relative px-4 py-8 md:py-32 md:px-32">
         <div className="container relative mx-auto py-4 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
