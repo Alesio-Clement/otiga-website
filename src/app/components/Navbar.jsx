@@ -8,7 +8,9 @@ const navLinks = [
   {
     title: "HOME",
     path: "/",
-    dropdown:[{ title: "Home 2", path: "/home2/" },
+    dropdown:[
+      { title: "Home 1", path: "/" },
+      { title: "Home 2", path: "/home2/" },
 
     ]
   },
